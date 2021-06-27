@@ -1,0 +1,23 @@
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+
+    <dubbo:application name="consumer" owner="dubbo3" organization="dubbo3" />
+
+    <dubbo:config-center protocol="zookeeper"
+                       address="${asf.register}" timeout="8000" />
+
+    <dubbo:registry address="${asf.register}" check="false" timeout="30000"
+                  register="true" protocol="zookeeper" />
+
+    <dubbo:protocol name="dubbo" port="-1"/> <!--协议类型-->
+
+    <dubbo:reference id="demoService" interface="org.apache.dubbo.demo.DemoService"
+                     group="${turbo.group.message}" check="false">
+    </dubbo:reference>
+</beans>
+
+
