@@ -5,18 +5,18 @@
        http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
 
 
-    <dubbo:application name="consumer" owner="dubbo3" organization="dubbo3" />
+    <dubbo:application name="consumer" owner="funny" organization="combo" />
 
     <dubbo:config-center protocol="zookeeper"
-                       address="${asf.register}" timeout="8000" />
+                       address="${dubbo.register}" timeout="8000" />
 
-    <dubbo:registry address="${asf.register}" check="false" timeout="30000"
+    <dubbo:registry address="${dubbo.register}" check="false" timeout="30000"
                   register="true" protocol="zookeeper" />
 
     <dubbo:protocol name="dubbo" port="-1"/> <!--协议类型-->
 
-    <dubbo:reference id="demoService" interface="org.apache.dubbo.demo.DemoService"
-                     group="${turbo.group.message}" check="false">
+    <dubbo:reference id="demoService" interface="com.funny.study.dubbo3.api.BookDubboService"
+                     group="${dubbo.group.demo}" check="false">
     </dubbo:reference>
 </beans>
 

@@ -14,16 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.dubbo.demo;
+package com.funny.study.dubbo3.api;
 
-import java.util.concurrent.CompletableFuture;
 
-public interface DemoService {
+public interface BookDubboService {
 
     String sayHello(String name);
-
-    default CompletableFuture<String> sayHelloAsync(String name) {
-        return CompletableFuture.completedFuture(sayHello(name));
-    }
-
 }

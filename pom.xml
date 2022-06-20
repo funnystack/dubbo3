@@ -12,6 +12,7 @@
         <keep.version>1.0.0-SNAPSHOT</keep.version>
         <fastjson.verion>1.2.66</fastjson.verion>
         <spring-boot.version>2.1.0.RELEASE</spring-boot.version>
+        <dubbo.version>3.0.0</dubbo.version>
     </properties>
 
 
@@ -31,28 +32,14 @@
         <dependencies>
             <dependency>
                 <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo-common</artifactId>
-                <version>3.0.1</version>
+                <artifactId>dubbo</artifactId>
+                <version>${dubbo.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo-registry-zookeeper</artifactId>
-                <version>3.0.1</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo-config-spring</artifactId>
-                <version>3.0.1</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo-rpc-rest</artifactId>
-                <version>3.0.1</version>
-            </dependency>
-            <dependency>
-                <groupId>com.funny</groupId>
-                <artifactId>demo-api</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <artifactId>dubbo-dependencies-zookeeper</artifactId>
+                <version>${dubbo.version}</version>
+                <type>pom</type>
             </dependency>
         </dependencies>
     </dependencyManagement>
