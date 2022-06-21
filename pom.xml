@@ -2,17 +2,17 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.funny</groupId>
-    <artifactId>dubbo3.0</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <artifactId>dubbo3</artifactId>
+    <version>1.0.0-RELEASE</version>
     <packaging>pom</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <keep.version>1.0.0-SNAPSHOT</keep.version>
-        <fastjson.verion>1.2.66</fastjson.verion>
-        <spring-boot.version>2.1.0.RELEASE</spring-boot.version>
-        <dubbo.version>3.0.0</dubbo.version>
+        <demo.version>1.0.0-RELEASE</demo.version>
+        <fastjson.verion>1.2.83</fastjson.verion>
+        <spring-boot.version>2.3.0.RELEASE</spring-boot.version>
+        <dubbo.version>3.0.8</dubbo.version>
     </properties>
 
 
@@ -40,6 +40,16 @@
                 <artifactId>dubbo-dependencies-zookeeper</artifactId>
                 <version>${dubbo.version}</version>
                 <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-config-spring</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.funny</groupId>
+                <artifactId>demo-api</artifactId>
+                <version>${demo.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

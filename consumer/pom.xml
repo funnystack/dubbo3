@@ -4,11 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.funny</groupId>
-        <artifactId>dubbo3.0</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <artifactId>dubbo3</artifactId>
+        <version>1.0.0-RELEASE</version>
     </parent>
 
     <artifactId>consumer</artifactId>
+    <version>1.0.0-RELEASE</version>
     <packaging>jar</packaging>
 
     <dependencies>
@@ -44,19 +45,12 @@
 
         <dependency>
             <groupId>org.apache.dubbo</groupId>
-            <artifactId>dubbo-common</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.dubbo</groupId>
-            <artifactId>dubbo-registry-zookeeper</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo-config-spring</artifactId>
         </dependency>
         <dependency>
             <groupId>com.funny</groupId>
             <artifactId>demo-api</artifactId>
+            <version>${demo.version}</version>
         </dependency>
 
     </dependencies>
