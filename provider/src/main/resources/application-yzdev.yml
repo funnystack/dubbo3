@@ -30,6 +30,6 @@ spring:
         min-idle: 0
     timeout: 0
 dubbo:
-  register: 127.0.0.1:2080
+  register: 127.0.0.1:2181
   group:
     demo: demo-dev

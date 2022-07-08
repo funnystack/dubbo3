@@ -4,18 +4,18 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
 
-
-    <dubbo:application name="provider" owner="funny" organization="combo" />
+    <!--默认值为all代表应用级注册和接口级注册，当前在完全迁移到应用级注册之后可以将服务直接迁移到应用级配置上去 -->
+    <dubbo:application name="provider" owner="funny" organization="combo" register-mode="all" />
 
     <dubbo:config-center  protocol="zookeeper" address="${dubbo.register}" timeout="8000" />
 
     <dubbo:registry address="${dubbo.register}" check="false" timeout="30000"
                   register="true" protocol="zookeeper"/>
+    <!--协议类型 官网默认使用的是netty，但是实例里面pom引用的netty4-->
+   <dubbo:protocol name="dubbo" port="-1" threadpool="cached" server="netty4" />
 
-    <dubbo:protocol name="dubbo" port="-1" threadpool="cached" /> <!--协议类型-->
-
-    <dubbo:service interface="com.funny.study.dubbo3.api.BookDubboService" ref="bookDubboService" protocol="dubbo"
-                   group="${dubbo.group.demo}" delay="-1" />
+   <dubbo:service interface="com.funny.study.dubbo3.api.BookDubboService" ref="bookDubboService" protocol="dubbo"
+                  group="${dubbo.group.demo}" delay="-1" />
 
 </beans>
 

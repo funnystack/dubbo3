@@ -11,16 +11,11 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <demo.version>1.0.0-RELEASE</demo.version>
         <fastjson.verion>1.2.83</fastjson.verion>
-        <spring-boot.version>2.3.0.RELEASE</spring-boot.version>
+        <spring-boot.version>2.3.1.RELEASE</spring-boot.version>
         <dubbo.version>3.0.8</dubbo.version>
+        <mybatis-plus.version>3.5.1</mybatis-plus.version>
+        <dynamic-datasource-spring-boot-starter.version>3.2.0</dynamic-datasource-spring-boot-starter.version>
     </properties>
-
-
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.0.RELEASE</version>
-    </parent>
 
     <modules>
         <module>provider</module>
@@ -31,20 +26,19 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo</artifactId>
-                <version>${dubbo.version}</version>
+                <!-- Import dependency management from Spring Boot -->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo-dependencies-zookeeper</artifactId>
+                <artifactId>dubbo-bom</artifactId>
                 <version>${dubbo.version}</version>
                 <type>pom</type>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo-config-spring</artifactId>
-                <version>${dubbo.version}</version>
+                <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>com.funny</groupId>
